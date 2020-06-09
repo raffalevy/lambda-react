@@ -1,0 +1,176 @@
+* {
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+    font-size: 14pt;
+}
+
+body {
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+}
+
+.term-view {
+    display: inline-block;
+    padding: 0.2em 0.2em;
+    cursor: default;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+
+    transition: background-color 0.2s;
+    transition: box-shadow 0.2s;
+}
+
+.term-view-abs, .term-view-app {
+    border: 1px solid grey;
+    border-radius: 0.5em;
+    padding: 0.5em 0.5em;
+    margin: 0 0.1em;
+    box-shadow: 0 0 0.15em #CCCCCC;
+}
+
+.term-view-abs {
+    background-color: #FFD0D0
+}
+
+.term-view-app {
+    background-color: #D0FFD0
+}
+
+.paren {
+    color: #AAAAAA
+}
+
+.term-view-hovered {
+    background-color: #F0F0FF;
+    cursor: pointer;
+    box-shadow: 0 0 0.3em #333333;
+    color: blue;
+}
+
+.term-view-hovered * {
+    cursor: pointer;
+}
+
+/* .term-view-hovered.term-view-var {
+} */
+
+.term-view-container {
+    position: relative;
+    border: 1px solid #AAAAAA;
+    border-radius: 5px;
+    padding: 4px;
+    min-height: 250px;
+    background-color: #fefefe;
+    font-size: 18pt;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+.term-view-container-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+.toolbar-button {
+    border-radius: 3px;
+    padding: 0.3em 0.5em;
+    border: 1px solid #999999;
+    background-color: #F8F8F8;
+    box-shadow: 0 0 0.15em #CCCCCC;
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.toolbar-button:hover:not(.toolbar-button-selected){
+    box-shadow: 0 0 0.30em #CCCCCC;
+    background-color: #E8E8E8;
+}
+
+.toolbar-button-selected {
+    background-color: #FF8888;
+    box-shadow: 0 0 0.50em #888888;
+}
+
+.toolbar-button-selected:hover {
+    background-color: #FF6666;
+    box-shadow: 0 0 0.50em #555555;
+}
+
+.modal-container {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; 
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal-box {
+    background-color: white;
+    margin: 7rem auto;
+    max-width: 650px;
+    padding-top: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.modal-box h2 {
+    background-color: #EEEEEE;
+    font-size: 24pt;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.7rem 1rem;
+    width: 100%;
+}
+
+.modal-box section {
+    padding: 0.7rem 1rem;
+}
+
+.modal-exit-button {
+    float: right;
+    font-size: 24pt;
+    padding: 0.7rem;
+    margin-top: -0.7rem;
+    margin-right: -0.6rem;
+    background-color: transparent;
+    border: none;
+    color: #888888;
+    transition: color 0.1s;
+}
+
+.modal-exit-button:hover {
+    cursor: pointer;
+    color: #AAAAAA;
+}
+
+.modal-exit-button:active:hover {
+    color: #000000;
+}
+
+textarea {
+    width: 100%;
+    font-family: 'Roboto Mono', 'Menlo', monospace
+}
