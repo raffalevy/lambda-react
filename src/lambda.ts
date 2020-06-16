@@ -80,11 +80,22 @@ export function freeVars(term: Term) {
     }
 }
 
+export function cloneTerm(term: Term) : Term {
+    switch (term.kind) {
+        case TermKind.Var:
+            return VarTerm(term.symbol)
+        case TermKind.Abs:
+            return AbsTerm(term.param, cloneTerm(term.body))
+        case TermKind.App:
+            return AppTerm(cloneTerm(term.first), cloneTerm(term.second))
+    }
+}
+
 export function substituteVar(term: Term, left: string, right: Term) : Term {
     switch (term.kind) {
         case TermKind.Var: {
             if (term.symbol === left) {
-                return right
+                return cloneTerm(right)
             } else {
                 return term
             }

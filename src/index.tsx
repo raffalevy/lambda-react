@@ -185,6 +185,20 @@ function useModal(): {
 
     const hideModal = () => setActive(false)
 
+    const handleKeyUp = (e: KeyboardEvent) => {
+        if (e.keyCode === 27) {
+            e.preventDefault()
+            hideModal()
+        }
+    }
+
+    React.useEffect(() => {
+        window.addEventListener("keyup", handleKeyUp, false);
+        return () => {
+            window.removeEventListener("keyup", handleKeyUp, false);
+        }
+    })
+
     return {
         modal: <Modal active={active} title={inner[0]} onExitClick={hideModal}>{inner[1]}</Modal>,
         showModal: (title, content) => {
